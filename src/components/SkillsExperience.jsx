@@ -4,17 +4,33 @@ import TextReveal from './TextReveal';
 
 export default function SkillsExperience() {
   const skills = [
-    'UX Design', 'UI Design', 'Product Design', 'Design Systems',
-    'Front-End Development', 'Workshops', 'Design Sprint', 'Interaction Design',
-    'User Testing', 'Usability Testing', 'UX Research', 'Leadership',
-    'Mentoring', 'No-Code'
+    'Node.js',
+    'TypeScript',
+    'React.js',
+    'Next.js',
+    'Express.js',
+    'JavaScript (ES6+)',
+    'Python',
+    'FastAPI',
+    'PostgreSQL',
+    'SQL',
+    'MySQL',
+    'REST APIs',
+    'Prisma',
+    'Docker',
+    'Git & GitHub',
+    'HTML5 & CSS3',
+    'Bootstrap',
+    'Odoo ERP',
+    'Full-Stack Development',
+    'Agile Scrum',
+    'API Testing',
+    'Postman'
   ];
 
   const experiences = [
-    { role: 'Product Designer', company: 'Company', period: 'Jan 2020 - Jan 2023' },
-    { role: 'Lead UX/UI Designer', company: 'Company', period: 'Jan 2018 - Jan 2020' },
-    { role: 'Senior Product Designer', company: 'Company', period: 'Jun 2016 - Present' },
-    { role: 'Co-Founder', company: 'Company', period: 'Jan 2011 - Jun 2015' }
+    { role: 'Software Developer', company: 'Ahalia International Foundation', period: 'Dec 2025 – Present' },
+    { role: 'Full Stack Software Developer Trainee', company: 'Star Knowledge Ventures', period: 'Nov 2024 – Dec 2025' }
   ];
 
   return (

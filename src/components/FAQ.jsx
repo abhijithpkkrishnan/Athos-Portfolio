@@ -6,16 +6,16 @@ import TextReveal from './TextReveal';
 export default function FAQ() {
   const faqs = [
     {
-      q: 'What is your design process?',
-      a: 'My design process typically involves four key phases: research, design, prototype, and test. In the research phase, I gather insights about the user and their needs. In the design phase, I create wireframes and visual designs that meet those needs. In the prototype phase, I create interactive models of the design for testing. In the test phase, I collect feedback from users to refine the design.'
+      q: 'What is your backend architecture & API development workflow?',
+      a: 'I specialize in building scalable RESTful backend microservices and web APIs using Node.js, Express.js, Python, and FastAPI. My workflow covers database schema modeling with Prisma ORM, query optimization in PostgreSQL, implementing secure JWT authentication, and creating custom API bridges for enterprise integrations like Odoo 18 ERP.'
     },
     {
-      q: 'What tools and software do you use for UX design?',
-      a: 'I specialize in Framer, Figma, Notion for documentation, VWO for A/B testing, Rive for advanced vector micro-animations, and modern web frameworks (React/HTML/CSS) for full-stack implementation.'
+      q: 'What core technologies and development tools do you use for full-stack projects?',
+      a: 'For frontend interfaces, I leverage React.js, Next.js, and TypeScript with responsive CSS3 and Bootstrap. On the backend and database layer, I utilize Node.js, Express, Python, PostgreSQL, and Docker. I manage version control through Git/GitHub, validate API endpoints via Postman testing pipelines, and adhere to Agile Scrum methodologies.'
     },
     {
-      q: 'How do you measure the success of your UX designs?',
-      a: 'Success is measured through quantitative metrics (conversion rate improvements, reduction in churn, increased session duration, task completion time) and qualitative feedback collected during usability testing sessions.'
+      q: 'How do you handle security, authentication, and performance optimization in production applications?',
+      a: 'I enforce secure authorization using JWT-based Role-Based Access Control (RBAC) across multi-user portals, implement automated audit logging to track user activity, and optimize PostgreSQL database queries and indexes to ensure low-latency response times and reliability in production workflows.'
     }
   ];
 

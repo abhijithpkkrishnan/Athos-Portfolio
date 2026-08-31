@@ -124,7 +124,7 @@ export default function CaseStudies({ setSelectedCase, setRoute }) {
       title: 'Healthcare & Clinical Operations System',
       description: 'Developed scalable healthcare management modules, RESTful API integrations, and PostgreSQL database workflows at Ahalia International Foundation using Python, Node.js, and Odoo.',
       colorClass: 'card-mint',
-      image: '/assets/case-travel.png',
+      image: '/assets/real_emr_history_mockup_1788186077379.jpg',
       metrics: [
         { label: 'API Response Time', value: '<120ms' },
         { label: 'Module Efficiency', value: '+35%' },
@@ -137,7 +137,7 @@ export default function CaseStudies({ setSelectedCase, setRoute }) {
       title: 'Full-Stack Hospital Billing & Health Portal',
       description: 'Engineered a secure hospital billing & healthcare portal at Ahalia International Foundation using Node.js, Express, PostgreSQL, and JWT RBAC with digital prescription management and automated audit logging.',
       colorClass: 'card-sand',
-      image: '/assets/case-ecommerce.jpg',
+      image: '/assets/real_hospital_billing_mockup_1788186105839.jpg',
       metrics: [
         { label: 'Role Security', value: 'JWT RBAC' },
         { label: 'Audit Logging', value: 'Automated' },
@@ -149,7 +149,7 @@ export default function CaseStudies({ setSelectedCase, setRoute }) {
       title: 'Full-Stack Healthcare & AI Assistant Portal',
       description: 'Built a full-stack healthcare portal using Next.js, Node.js, TypeScript, Python, and Prisma with Odoo 18 ERP API bridges for automated prescriptions, lab delivery, and real-time pharmacy tracking.',
       colorClass: 'card-blue',
-      image: '/assets/case-streaming.jpg',
+      image: '/assets/real_ai_healthcare_portal_mockup_1788186137331.jpg',
       metrics: [
         { label: 'ERP Data Sync', value: 'Real-Time' },
         { label: 'Automated Modules', value: '6 Workflows' },
@@ -161,7 +161,7 @@ export default function CaseStudies({ setSelectedCase, setRoute }) {
       title: 'Full-Stack Clinical History Portal',
       description: 'Built a responsive multi-center clinical history portal with React.js, Node.js, PostgreSQL, and Odoo ERP integration, featuring regional RBAC, real-time diagnostic alerts, and interactive visit timelines.',
       colorClass: 'card-purple',
-      image: '/assets/case-banking.jpg',
+      image: '/assets/real_clinical_history_mockup_1788186169156.jpg',
       metrics: [
         { label: 'Diagnostic Alerts', value: 'Real-Time' },
         { label: 'Record Sync', value: 'Multi-Center' },

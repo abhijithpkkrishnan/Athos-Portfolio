@@ -6,25 +6,25 @@ import TextReveal from './TextReveal';
 export default function Blog() {
   const posts = [
     {
-      id: 'user-testing',
-      date: 'Sep 5, 2023',
-      title: 'The Importance of User Testing in Product Development',
-      image: '/assets/blog-hero-1.png',
-      content: 'User testing is the foundation of user-centered design. By testing your product with real users early and often, you uncover hidden usability issues, validate hypotheses, and build features that solve actual user pain points.'
+      id: 'scalable-rest-apis',
+      date: 'Feb 18, 2026',
+      title: 'Building Scalable RESTful APIs with Node.js, Express & PostgreSQL',
+      image: '/assets/sleek_blog_api_design_1788188153347.jpg',
+      content: 'Architecting scalable REST APIs requires modular controller patterns, asynchronous middleware pipelines, and PostgreSQL query optimization. Learn how proper database indexing, connection pooling, and payload validation ensure low-latency response times under high concurrency.'
     },
     {
-      id: 'uxui-trends-2023',
-      date: 'Sep 4, 2023',
-      title: 'UX/UI Trends to Watch for in 2023',
+      id: 'odoo-erp-integration',
+      date: 'Jan 24, 2026',
+      title: 'Integrating Healthcare Workflows with Odoo 18 ERP & Custom Bridges',
+      image: '/assets/sleek_blog_odoo_design_1788188197317.jpg',
+      content: 'Connecting patient-facing web applications to enterprise ERP platforms demands robust bi-directional data synchronization. Explore how custom REST API bridges automate patient appointment scheduling, digital prescription dispatch, and real-time pharmacy inventory tracking.'
+    },
+    {
+      id: 'jwt-rbac-security',
+      date: 'Dec 15, 2025',
+      title: 'Implementing JWT & Role-Based Access Control (RBAC) in Enterprise Portals',
       image: '/assets/case-detail-3.jpg',
-      content: 'From glassmorphism and subtle micro-interactions to hyper-personalized AI workflows and accessible color palettes, modern digital products demand clean aesthetics and intuitive performance.'
-    },
-    {
-      id: 'accessible-websites',
-      date: 'Sep 3, 2023',
-      title: 'Creating Accessible Websites: A Guide for Designers',
-      image: '/assets/case-detail-4.jpg',
-      content: 'Accessibility is not an afterthought—it is essential. Learn how semantic HTML structure, proper ARIA attributes, keyboard navigation, and contrast ratios empower all users.'
+      content: 'Security and data privacy in multi-user enterprise applications rely on granular authorization. Discover how JWT access tokens, refresh token strategies, regional role-based access permissions, and automated audit logging protect critical patient records.'
     }
   ];
 
