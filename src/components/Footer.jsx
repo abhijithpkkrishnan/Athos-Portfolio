@@ -6,26 +6,26 @@ export default function Footer({ onOpenContact }) {
     <footer className="footer-section">
       <div className="container">
         <div className="footer-cta">
-          <h2 className="footer-title">Let's work together</h2>
+          <h2 className="footer-title">Let's Build Something Great</h2>
           <p style={{ fontSize: '16px', color: '#6b7280', marginBottom: '32px' }}>
-            Have a project in mind? Book a discovery call or reach out directly.
+            Looking to engineer scalable full-stack web applications, REST APIs, or ERP integrations? Let's connect.
           </p>
           <button onClick={onOpenContact} className="btn-pill-dark" style={{ padding: '14px 32px' }}>
-            Book a discovery call
+            Get in Touch
             <ArrowUpRight size={16} />
           </button>
         </div>
 
         <div className="footer-bottom">
-          <div>Nicey © 2025. Designed by Goran Babarogic</div>
+          <div>Abhijith P K © {new Date().getFullYear()}. Full Stack Software Developer.</div>
           <div className="social-links">
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a>
-            <a href="mailto:hello@nicey.studio">Mail</a>
+            <a href="https://github.com/abhijithpkkrishnan" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/abhijith-pk-ba0848213/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="mailto:abhijithpkkrishnan@gmail.com">Mail</a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

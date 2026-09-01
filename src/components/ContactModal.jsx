@@ -1,18 +1,51 @@
 import React, { useState } from 'react';
-import { X, Send, CheckCircle } from 'lucide-react';
+import { X, Send, CheckCircle, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ContactModal({ isOpen, onClose }) {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '', budget: '$2k - $5k' });
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      onClose();
-    }, 2000);
+    setLoading(true);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/abhijithpkkrishnan@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `New Portfolio Inquiry from ${formData.name}`,
+          _captcha: 'false'
+        })
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        // Fallback to mailto link
+        window.location.href = `mailto:abhijithpkkrishnan@gmail.com?subject=Portfolio Inquiry from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message + '\n\nFrom: ' + formData.email)}`;
+        setSubmitted(true);
+      }
+    } catch (err) {
+      // Fallback on network error
+      window.location.href = `mailto:abhijithpkkrishnan@gmail.com?subject=Portfolio Inquiry from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message + '\n\nFrom: ' + formData.email)}`;
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => {
+        setSubmitted(false);
+        onClose();
+      }, 3500);
+    }
   };
 
   return (
@@ -46,15 +79,15 @@ export default function ContactModal({ isOpen, onClose }) {
               >
                 <CheckCircle size={48} color="#22c55e" style={{ margin: '0 auto 16px auto' }} />
                 <h3 style={{ fontSize: '22px', fontWeight: 600, marginBottom: '8px' }}>Message Sent!</h3>
-                <p style={{ fontSize: '14px', color: '#6b7280' }}>
-                  Thank you for reaching out. We will get back to you within 24 hours.
+                <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: '1.5' }}>
+                  Thank you for reaching out! Your message has been sent to <strong>abhijithpkkrishnan@gmail.com</strong>.
                 </p>
               </motion.div>
             ) : (
               <>
-                <h2 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '8px' }}>Start a Project</h2>
+                <h2 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '8px' }}>Get in Touch</h2>
                 <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '24px' }}>
-                  Tell us about your project vision, timeline, and scope.
+                  Have a project in mind, a technical query, or looking to collaborate? Drop a message below!
                 </p>
 
                 <form onSubmit={handleSubmit}>
@@ -83,24 +116,11 @@ export default function ContactModal({ isOpen, onClose }) {
                   </div>
 
                   <div className="form-group">
-                    <label className="form-label">Project Budget</label>
-                    <select
-                      className="form-input"
-                      value={formData.budget}
-                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    >
-                      <option>$2k - $5k</option>
-                      <option>$5k - $10k</option>
-                      <option>$10k+</option>
-                    </select>
-                  </div>
-
-                  <div className="form-group">
-                    <label className="form-label">Project Overview</label>
+                    <label className="form-label">Message</label>
                     <textarea
                       rows="4"
                       required
-                      placeholder="Describe your design goals, timeline, or key features..."
+                      placeholder="Type your message here..."
                       className="form-textarea"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -109,14 +129,23 @@ export default function ContactModal({ isOpen, onClose }) {
 
                   <motion.button
                     type="submit"
+                    disabled={loading}
                     className="btn-pill-dark"
-                    style={{ width: '100%', padding: '12px', marginTop: '12px' }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    style={{ width: '100%', padding: '12px', marginTop: '12px', opacity: loading ? 0.8 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}
+                    whileHover={!loading ? { scale: 1.02 } : {}}
+                    whileTap={!loading ? { scale: 0.98 } : {}}
                     transition={{ type: 'spring', stiffness: 400, damping: 20 }}
                   >
-                    Send Message
-                    <Send size={16} />
+                    {loading ? (
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                        <Loader2 className="animate-spin" size={16} /> Sending...
+                      </span>
+                    ) : (
+                      <>
+                        Send Message
+                        <Send size={16} />
+                      </>
+                    )}
                   </motion.button>
                 </form>
               </>
@@ -127,4 +156,5 @@ export default function ContactModal({ isOpen, onClose }) {
     </AnimatePresence>
   );
 }
+
 
