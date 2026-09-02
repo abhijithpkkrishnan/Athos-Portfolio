@@ -18,12 +18,11 @@ export default function FloatingWidgets({ setRoute }) {
     return () => clearInterval(interval);
   }, []);
 
-  const templates = [
-    { name: 'Anastasis', link: '#' },
-    { name: 'Preview', link: '#' },
-    { name: 'Prologue', link: '#' },
-    { name: 'Athos Dark', link: '#' },
-    { name: 'Valaam', link: '#' },
+  const projects = [
+    { name: 'Healthcare AI Portal', link: 'https://github.com/abhijithpkkrishnan' },
+    { name: 'Hospital Billing System', link: 'https://github.com/abhijithpkkrishnan' },
+    { name: 'Clinical History Portal', link: 'https://github.com/abhijithpkkrishnan' },
+    { name: 'Odoo 18 ERP Bridge', link: 'https://github.com/abhijithpkkrishnan' },
   ];
 
   return (
@@ -50,7 +49,7 @@ export default function FloatingWidgets({ setRoute }) {
             borderColor: 'rgba(0,0,0,0.1)'
           }}
         >
-          Get Athos Plus
+          Hire Abhijith P K
         </motion.button>
       </motion.div>
 
@@ -67,7 +66,7 @@ export default function FloatingWidgets({ setRoute }) {
           whileHover={{ y: -2, boxShadow: '0 14px 36px rgba(0,0,0,0.12)' }}
           transition={{ duration: 0.2 }}
         >
-          {/* Template Popover Dropdown */}
+          {/* Project Popover Dropdown */}
           <AnimatePresence>
             {showTemplates && (
               <motion.div
@@ -78,18 +77,22 @@ export default function FloatingWidgets({ setRoute }) {
                 transition={{ type: 'spring', stiffness: 400, damping: 26 }}
               >
                 <div style={{ fontSize: '10px', color: '#9ca3af', padding: '4px 8px', fontWeight: 600 }}>
-                  OTHER TEMPLATES
+                  FEATURED PROJECTS
                 </div>
-                {templates.map((t, idx) => (
-                  <motion.div
+                {projects.map((t, idx) => (
+                  <motion.a
                     key={idx}
+                    href={t.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="template-popover-item"
+                    style={{ textDecoration: 'none', color: 'inherit' }}
                     whileHover={{ x: 3, backgroundColor: '#f3f4f6' }}
                     transition={{ duration: 0.15 }}
                   >
                     <span>{t.name}</span>
                     <ExternalLink size={12} color="#6b7280" />
-                  </motion.div>
+                  </motion.a>
                 ))}
               </motion.div>
             )}

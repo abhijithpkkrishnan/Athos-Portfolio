@@ -1,34 +1,33 @@
 import React from 'react';
-import { ArrowLeft, Quote } from 'lucide-react';
+import { ArrowLeft, Quote, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function CaseStudyDetail({ caseId, setRoute, onOpenContact }) {
   const caseDataMap = {
-    'travel-booking-app': {
-      title: 'Travel Booking App',
-      heroImage: '/assets/case-detail-1.jpg',
-      company: 'Shopify',
-      industry: 'E-commerce',
-      revenue: '$1.578 billion (2019)',
-      size: '5,000+',
-      headquarters: 'Ottawa, Ontario, Canada',
-      founded: '2006',
+    'healthcare-clinical-system': {
+      title: 'Healthcare & Clinical Operations System',
+      heroImage: '/assets/real_emr_history_mockup_1788186077379.jpg',
+      company: 'Ahalia International Foundation',
+      industry: 'Healthcare & Enterprise Software',
+      revenue: 'Enterprise',
+      size: '500+ Staff',
+      headquarters: 'Kerala, India',
+      founded: '2025',
       stats: [
-        { label: 'Increase in user adoption', value: '35%' },
-        { label: 'Increase in user retention', value: '25%' },
-        { label: 'Increase in time spent on website', value: '84%' },
+        { label: 'API Response Time', value: '<120ms' },
+        { label: 'Module Efficiency', value: '+35%' },
+        { label: 'System Integration', value: '100% Reliable' },
       ],
-      challenge: 'The app had a cluttered interface, making it difficult for users to navigate and find essential features. Users were facing issues with the onboarding process, which was affecting new user adoption rates. The app lacked personalization and customization options, making it less engaging and user-friendly.',
-      results: 'The redesigned app features a clean, clutter-free interface, making it easier for users to navigate and access essential features. The improved onboarding process resulted in a 35% increase in new user adoption rates.',
-      quote: 'With our new visual branding and language in place, the new brand clearly captures the essence of our current and target customer base, our employees, and our values.',
-      quoteAuthor: 'Tobias Lütke',
-      quoteRole: 'CEO, Co-founder | Shopify',
+      challenge: 'Developing and enhancing modular healthcare software components required seamless REST API design, robust PostgreSQL database interaction, and automated workflow integration following strict SDLC practices.',
+      results: 'Engineered scalable healthcare software modules utilizing Python, PostgreSQL, REST APIs, and Odoo ERP, improving platform reliability, backend speed, and operational efficiency.',
+      quote: 'Designing modular REST APIs and maintaining PostgreSQL backend services enabled us to deliver high-performance, resilient healthcare solutions across departments.',
+      quoteAuthor: 'Abhijith P K',
+      quoteRole: 'Software Developer | Ahalia International Foundation',
       process: [
-        { step: '01', title: 'Research & Analysis', desc: 'We conducted user interviews, surveys, and analyzed in-app analytics to understand the pain points and user needs. We also studied competitor apps and industry trends to gather insights.' },
-        { step: '02', title: 'Information Architecture', desc: 'Based on the research findings, we restructured the app navigation and content, prioritizing features and information according to user needs.' },
-        { step: '03', title: 'Wireframing & Prototyping', desc: 'We designed low-fidelity wireframes to visualize the new layout and navigation, iteratively refining them based on user feedback. Afterward, we built a high-fidelity interactive prototype.' },
-        { step: '04', title: 'Usability Testing', desc: 'We conducted usability tests with a diverse group of users to validate the design and identify areas for improvement. Based on feedback, we made necessary adjustments.' },
-        { step: '05', title: 'Visual Design & Style Guide', desc: 'We developed a cohesive visual language, including color schemes, typography, and iconography, ensuring consistency throughout the app.' },
+        { step: '01', title: 'Requirement Analysis & SDLC Planning', desc: 'Collaborated with cross-functional teams to outline clinical requirements, database schemas, and API integration goals.' },
+        { step: '02', title: 'REST API Architecture & PostgreSQL Schema', desc: 'Designed high-throughput RESTful endpoints and optimized SQL queries to support scalable healthcare data management.' },
+        { step: '03', title: 'Odoo ERP Integration & Business Logic', desc: 'Customized Odoo modules and integrated backend microservices for automated healthcare record workflows.' },
+        { step: '04', title: 'API Testing & Production Debugging', desc: 'Executed thorough Postman API tests and Git-based code reviews to troubleshoot production issues and ensure operational stability.' },
       ]
     },
     'ecommerce-website-redesign': {
@@ -40,6 +39,7 @@ export default function CaseStudyDetail({ caseId, setRoute, onOpenContact }) {
       size: '500+ Staff',
       headquarters: 'Kerala, India',
       founded: '2024',
+      liveUrl: 'http://emr-lite.ahaliahospitals.in/',
       stats: [
         { label: 'Role-Based Access Control', value: 'JWT RBAC' },
         { label: 'Audit Trail Tracking', value: '100% Automated' },
@@ -66,6 +66,7 @@ export default function CaseStudyDetail({ caseId, setRoute, onOpenContact }) {
       size: '500+ Staff',
       headquarters: 'Kerala, India',
       founded: '2024',
+      liveUrl: 'https://mybooking.ahaliahospitals.in/',
       stats: [
         { label: 'ERP Synchronization', value: 'Real-Time' },
         { label: 'Core Workflows Automated', value: '6 Modules' },
@@ -92,6 +93,7 @@ export default function CaseStudyDetail({ caseId, setRoute, onOpenContact }) {
       size: '500+ Staff',
       headquarters: 'Kerala, India',
       founded: '2024',
+      liveUrl: 'http://emr-lite.ahaliahospitals.in/',
       stats: [
         { label: 'Multi-Center Record Sync', value: '100% Consolidated' },
         { label: 'Diagnostic Alerts', value: 'Real-Time' },
@@ -108,10 +110,37 @@ export default function CaseStudyDetail({ caseId, setRoute, onOpenContact }) {
         { step: '03', title: 'Diagnostic Alert Engine', desc: 'Developed real-time alert triggers surfacing critical vital and ophthalmic diagnostic updates directly during practitioner visits.' },
         { step: '04', title: 'Interactive Timeline UI', desc: 'Designed responsive React visit timelines with temporal log sync for seamless patient record exploration.' }
       ]
+    },
+    'aladdin-ecommerce-platform': {
+      title: 'E-Commerce Platform & Mobile App APIs',
+      heroImage: '/assets/Aladdin project.png',
+      company: 'Aladdin E-Commerce Platform',
+      industry: 'E-Commerce & Mobile Solutions',
+      revenue: 'Enterprise',
+      size: 'Global / Regional',
+      headquarters: 'Iraq',
+      founded: '2024',
+      liveUrl: 'https://aladdin.com.iq/',
+      stats: [
+        { label: 'Mobile API Latency', value: '<85ms' },
+        { label: 'Catalog Search Sync', value: 'High Throughput' },
+        { label: 'Payment Gateway Security', value: '100% Verified' },
+      ],
+      challenge: 'Building a high-concurrency e-commerce portal and scalable REST API engine to service native iOS & Android mobile apps required fast product catalog search, inventory sync, secure payment processing, and low-latency order updates.',
+      results: 'Engineered a full-stack e-commerce web platform and robust RESTful microservice APIs powering mobile app transactions, multi-category catalog search, and automated order fulfillment.',
+      quote: 'Designing ultra-fast REST APIs for our mobile applications enabled frictionless checkout and real-time inventory management across all digital storefronts.',
+      quoteAuthor: 'Abhijith P K',
+      quoteRole: 'Full Stack & API Engineer',
+      process: [
+        { step: '01', title: 'High-Performance API Architecture', desc: 'Designed RESTful API endpoints tailored for iOS & Android mobile apps with optimized JSON payloads and caching.' },
+        { step: '02', title: 'E-Commerce Storefront & Catalog Engine', desc: 'Developed responsive e-commerce web interface with dynamic category browsing, search filters, and cart management.' },
+        { step: '03', title: 'Payment & Checkout Integration', desc: 'Integrated secure payment gateways, automated invoice generation, and transaction confirmation webhooks.' },
+        { step: '04', title: 'Load Optimization & API Monitoring', desc: 'Optimized SQL database queries and implemented Postman test suites to maintain low latency under peak mobile traffic.' }
+      ]
     }
   };
 
-  const currentCase = caseDataMap[caseId] || caseDataMap['travel-booking-app'];
+  const currentCase = caseDataMap[caseId] || caseDataMap['healthcare-clinical-system'];
 
   return (
     <motion.div
@@ -122,17 +151,35 @@ export default function CaseStudyDetail({ caseId, setRoute, onOpenContact }) {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="container-narrow">
-        <motion.button
-          onClick={() => { setRoute('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-          className="btn-pill-light"
-          style={{ marginBottom: '32px', padding: '8px 16px', fontSize: '13px' }}
-          whileHover={{ scale: 1.05, x: -3 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-        >
-          <ArrowLeft size={16} />
-          Back to Home
-        </motion.button>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '32px', flexWrap: 'wrap', gap: '12px' }}>
+          <motion.button
+            onClick={() => { setRoute('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            className="btn-pill-light"
+            style={{ padding: '8px 16px', fontSize: '13px' }}
+            whileHover={{ scale: 1.05, x: -3 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+          >
+            <ArrowLeft size={16} />
+            Back to Home
+          </motion.button>
+
+          {currentCase.liveUrl && (
+            <motion.a
+              href={currentCase.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-pill-dark"
+              style={{ padding: '8px 18px', fontSize: '13px' }}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+            >
+              Visit Live System
+              <ArrowUpRight size={16} />
+            </motion.a>
+          )}
+        </div>
 
         <h1 className="hero-title" style={{ textAlign: 'left', fontSize: '48px', marginBottom: '24px' }}>
           {currentCase.title}
@@ -315,7 +362,7 @@ export default function CaseStudyDetail({ caseId, setRoute, onOpenContact }) {
             whileTap={{ scale: 0.96 }}
             transition={{ type: 'spring', stiffness: 400, damping: 20 }}
           >
-            Start a Project with Athos
+            Start a Project with Abhijith P K
           </motion.button>
         </div>
       </div>

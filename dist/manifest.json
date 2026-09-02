@@ -1,0 +1,22 @@
+{
+  "short_name": "Abhijith PK",
+  "name": "Abhijith P K — Full Stack & Node.js Software Developer",
+  "description": "Portfolio of Abhijith P K, Full Stack Software Developer specializing in Node.js, TypeScript, React.js, Python, PostgreSQL, and REST APIs.",
+  "icons": [
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/abhi_photo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#1d4ed8",
+  "display": "standalone",
+  "orientation": "portrait"
+}

@@ -7,21 +7,21 @@ function StickyCaseCard({ item, index, total, handleOpenCase }) {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start end', 'start start']
+    offset: ['start start', 'end start']
   });
 
   // Card scales slightly down as subsequent cards stack over top of it
-  const scale = useTransform(scrollYProgress, [0.6, 1], [1, 0.95 - (total - index) * 0.01]);
-  const topOffset = 110 + index * 24;
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1 - (total - index - 1) * 0.025]);
 
   return (
     <div
       ref={containerRef}
       className="case-card-sticky-wrapper"
       style={{
-        position: 'sticky',
-        top: `${topOffset}px`,
-        marginBottom: index === total - 1 ? '60px' : '40px',
+        '--desktop-top': `${100 + index * 24}px`,
+        '--mobile-top': `${65 + index * 14}px`,
+        top: `var(--desktop-top, ${100 + index * 24}px)`,
+        marginBottom: index === total - 1 ? '80px' : '40px',
         zIndex: index + 1,
       }}
     >
@@ -31,10 +31,10 @@ function StickyCaseCard({ item, index, total, handleOpenCase }) {
           scale,
           transformOrigin: 'top center',
         }}
-        initial={{ opacity: 0, y: 70 }}
+        initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-40px' }}
-        transition={{ duration: 0.75, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.65, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
         whileHover={{
           y: -6,
           boxShadow: '0 24px 48px rgba(0,0,0,0.12)',
@@ -72,33 +72,60 @@ function StickyCaseCard({ item, index, total, handleOpenCase }) {
             }}>
               Coming Soon
             </span>
-          ) : !item.hideButton ? (
-            <motion.button
-              onClick={() => handleOpenCase(item)}
-              className="btn-pill-dark"
-              whileHover="hover"
-              whileTap={{ scale: 0.96 }}
-              initial="initial"
-              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-            >
-              View Project
-              <motion.span
-                style={{ display: 'inline-flex' }}
-                variants={{
-                  initial: { x: 0, y: 0 },
-                  hover: { x: 4, y: -4 }
-                }}
+          ) : (
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              {item.liveUrl && (
+                <motion.a
+                  href={item.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill-dark"
+                  whileHover="hover"
+                  whileTap={{ scale: 0.96 }}
+                  initial="initial"
+                  transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                >
+                  Visit Live System
+                  <motion.span
+                    style={{ display: 'inline-flex' }}
+                    variants={{
+                      initial: { x: 0, y: 0 },
+                      hover: { x: 4, y: -4 }
+                    }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                  >
+                    <ArrowUpRight size={16} />
+                  </motion.span>
+                </motion.a>
+              )}
+
+              <motion.button
+                onClick={() => handleOpenCase(item)}
+                className={item.liveUrl ? "btn-pill-light" : "btn-pill-dark"}
+                whileHover="hover"
+                whileTap={{ scale: 0.96 }}
+                initial="initial"
                 transition={{ type: 'spring', stiffness: 400, damping: 20 }}
               >
-                <ArrowUpRight size={16} />
-              </motion.span>
-            </motion.button>
-          ) : null}
+                Case Details
+                <motion.span
+                  style={{ display: 'inline-flex' }}
+                  variants={{
+                    initial: { x: 0, y: 0 },
+                    hover: { x: 4, y: -4 }
+                  }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                >
+                  <ArrowUpRight size={16} />
+                </motion.span>
+              </motion.button>
+            </div>
+          )}
         </div>
 
         <motion.div
           className="case-card-image-wrapper"
-          onClick={() => handleOpenCase(item)}
+          onClick={() => item.liveUrl ? window.open(item.liveUrl, '_blank') : handleOpenCase(item)}
           style={{ cursor: item.comingSoon ? 'default' : 'pointer' }}
           whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
@@ -130,7 +157,6 @@ export default function CaseStudies({ setSelectedCase, setRoute }) {
         { label: 'Module Efficiency', value: '+35%' },
       ],
       comingSoon: false,
-      hideButton: true,
     },
     {
       id: 'ecommerce-website-redesign',
@@ -142,6 +168,7 @@ export default function CaseStudies({ setSelectedCase, setRoute }) {
         { label: 'Role Security', value: 'JWT RBAC' },
         { label: 'Audit Logging', value: 'Automated' },
       ],
+      liveUrl: 'http://emr-lite.ahaliahospitals.in/',
       comingSoon: false,
     },
     {
@@ -154,6 +181,7 @@ export default function CaseStudies({ setSelectedCase, setRoute }) {
         { label: 'ERP Data Sync', value: 'Real-Time' },
         { label: 'Automated Modules', value: '6 Workflows' },
       ],
+      liveUrl: 'https://mybooking.ahaliahospitals.in/',
       comingSoon: false,
     },
     {
@@ -166,6 +194,20 @@ export default function CaseStudies({ setSelectedCase, setRoute }) {
         { label: 'Diagnostic Alerts', value: 'Real-Time' },
         { label: 'Record Sync', value: 'Multi-Center' },
       ],
+      liveUrl: 'http://emr-lite.ahaliahospitals.in/',
+      comingSoon: false,
+    },
+    {
+      id: 'aladdin-ecommerce-platform',
+      title: 'E-Commerce Platform & Mobile App APIs',
+      description: 'Architected & developed scalable e-commerce web platform (Aladdin) and high-throughput RESTful API services powering cross-platform mobile applications, product catalog search, payment processing, and order execution.',
+      colorClass: 'card-sand',
+      image: '/assets/Aladdin project.png',
+      metrics: [
+        { label: 'Mobile API Latency', value: '<85ms' },
+        { label: 'Catalog Sync', value: 'High Throughput' },
+      ],
+      liveUrl: 'https://aladdin.com.iq/',
       comingSoon: false,
     },
   ];

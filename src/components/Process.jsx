@@ -54,14 +54,13 @@ export default function Process() {
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.6, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
               whileHover="hover"
-              initial="initial"
             >
               <h3 className="process-card-title">{s.title}</h3>
               <p className="process-card-desc">{s.desc}</p>
               <motion.div
                 className="process-num"
+                initial={{ scale: 1, opacity: 0.07 }}
                 variants={{
-                  initial: { scale: 1, opacity: 0.07 },
                   hover: { scale: 1.1, opacity: 0.14, x: 2, y: -2 }
                 }}
                 transition={{ type: 'spring', stiffness: 350, damping: 25 }}

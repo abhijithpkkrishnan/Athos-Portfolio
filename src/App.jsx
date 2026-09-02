@@ -16,10 +16,78 @@ import ContactModal from './components/ContactModal';
 import Footer from './components/Footer';
 import BackgroundGlow from './components/BackgroundGlow';
 
+const routeMetaMap = {
+  home: {
+    title: 'Abhijith P K — Full Stack & Node.js Software Developer Portfolio',
+    description: 'Portfolio of Abhijith P K, Full Stack Software Developer in Kerala, India. Building scalable web applications, REST APIs, PostgreSQL databases, Python services, and Odoo ERP integrations.'
+  },
+  cases: {
+    title: 'Full Stack Engineering Case Studies & Projects — Abhijith P K',
+    description: 'Explore full-stack healthcare management portals, hospital billing systems, clinical history systems, and Odoo ERP integration bridges built by Abhijith P K.'
+  },
+  'case-detail': {
+    title: 'Project Case Study — Abhijith P K Portfolio',
+    description: 'Detailed technical overview, system architecture, database design, and key engineering metrics for software solutions built by Abhijith P K.'
+  },
+  proposal: {
+    title: 'Project Proposal & Technical Scope — Abhijith P K',
+    description: 'Tailored full-stack web application development proposal, deliverable breakdown, tech stack scoping, and project timeline by Abhijith P K.'
+  },
+  calculator: {
+    title: 'Interactive Project Estimator & Tech Stack Calculator — Abhijith P K',
+    description: 'Calculate custom web application development scope, features, timeline, and cost estimates with Abhijith P K.'
+  }
+};
+
+function useSEO(route, selectedCase) {
+  useEffect(() => {
+    const meta = routeMetaMap[route] || routeMetaMap.home;
+    let title = meta.title;
+    let description = meta.description;
+
+    if (route === 'case-detail' && selectedCase) {
+      const caseTitles = {
+        'healthcare-clinical-system': 'Healthcare & Clinical Operations System — Abhijith P K',
+        'ecommerce-website-redesign': 'Full-Stack Hospital Billing & Health Portal — Abhijith P K',
+        'streamlining-ecommerce-navigation': 'Full-Stack Healthcare & AI Assistant Portal — Abhijith P K',
+        'enhancing-mobile-banking-app-usability': 'Full-Stack Clinical History Portal — Abhijith P K',
+        'aladdin-ecommerce-platform': 'E-Commerce Platform & Mobile App APIs — Abhijith P K'
+      };
+      if (caseTitles[selectedCase]) {
+        title = caseTitles[selectedCase];
+      }
+    }
+
+    document.title = title;
+
+    const setMeta = (name, content) => {
+      let el = document.querySelector(`meta[name="${name}"]`) || document.querySelector(`meta[property="${name}"]`);
+      if (el) {
+        el.setAttribute('content', content);
+      }
+    };
+
+    setMeta('description', description);
+    setMeta('og:title', title);
+    setMeta('og:description', description);
+    setMeta('twitter:title', title);
+    setMeta('twitter:description', description);
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      const baseUrl = 'https://abhijithpkkrishnan.github.io/';
+      const routePath = route === 'home' ? '' : `#${route}`;
+      canonical.setAttribute('href', `${baseUrl}${routePath}`);
+    }
+  }, [route, selectedCase]);
+}
+
 export default function App() {
-  const [route, setRoute] = useState('home'); // 'home' | 'cases' | 'case-detail' | 'proposal' | 'calculator'
-  const [selectedCase, setSelectedCase] = useState('travel-booking-app');
+  const [route, setRoute] = useState('home');
+  const [selectedCase, setSelectedCase] = useState('healthcare-clinical-system');
   const [contactOpen, setContactOpen] = useState(false);
+
+  useSEO(route, selectedCase);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -103,5 +171,3 @@ export default function App() {
     </div>
   );
 }
-
-

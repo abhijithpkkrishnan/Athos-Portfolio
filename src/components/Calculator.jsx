@@ -13,16 +13,16 @@ export default function Calculator({ onOpenContact }) {
   const [motionGraphics, setMotionGraphics] = useState(1);
   const [customFeatures, setCustomFeatures] = useState(false);
 
-  // Dynamic Price calculation
-  const baseCost = siteType === 'informational' ? 2000 : 6000;
+  // Dynamic Price calculation in INR
+  const baseCost = siteType === 'informational' ? 25000 : 75000;
   const baseTimeWeeks = siteType === 'informational' ? 2 : 4;
 
-  const pagesPrice = (pageCount - 1) * 250;
-  const planningPrice = sitePlanning ? 400 : 0;
-  const optimizationPrice = onsiteOptimization ? 350 : 0;
-  const migrationPrice = contentMigration ? 500 : 0;
-  const motionPrice = motionGraphics * 300;
-  const customPrice = customFeatures ? 800 : 0;
+  const pagesPrice = (pageCount - 1) * 3500;
+  const planningPrice = sitePlanning ? 8000 : 0;
+  const optimizationPrice = onsiteOptimization ? 6000 : 0;
+  const migrationPrice = contentMigration ? 10000 : 0;
+  const motionPrice = motionGraphics * 5000;
+  const customPrice = customFeatures ? 15000 : 0;
 
   const totalCost = baseCost + pagesPrice + planningPrice + optimizationPrice + migrationPrice + motionPrice + customPrice;
 
@@ -145,7 +145,7 @@ export default function Calculator({ onOpenContact }) {
                     +
                   </button>
                 </div>
-                <div className="calc-price-tag">${pagesPrice + 250}</div>
+                <div className="calc-price-tag">₹{(pagesPrice + 3500).toLocaleString('en-IN')}</div>
               </div>
             </div>
 
@@ -163,7 +163,7 @@ export default function Calculator({ onOpenContact }) {
                 </div>
                 <span className="calc-label">Site Planning</span>
               </div>
-              <div className="calc-price-tag">${planningPrice}</div>
+              <div className="calc-price-tag">₹{planningPrice.toLocaleString('en-IN')}</div>
             </div>
 
             <div className="calc-row">
@@ -180,7 +180,7 @@ export default function Calculator({ onOpenContact }) {
                 </div>
                 <span className="calc-label">Onsite Optimization</span>
               </div>
-              <div className="calc-price-tag">${optimizationPrice}</div>
+              <div className="calc-price-tag">₹{optimizationPrice.toLocaleString('en-IN')}</div>
             </div>
 
             <div className="calc-row">
@@ -197,7 +197,7 @@ export default function Calculator({ onOpenContact }) {
                 </div>
                 <span className="calc-label">Content Migration</span>
               </div>
-              <div className="calc-price-tag">${migrationPrice}</div>
+              <div className="calc-price-tag">₹{migrationPrice.toLocaleString('en-IN')}</div>
             </div>
 
             <div className="calc-row">
@@ -230,7 +230,7 @@ export default function Calculator({ onOpenContact }) {
                     +
                   </button>
                 </div>
-                <div className="calc-price-tag">${motionPrice}</div>
+                <div className="calc-price-tag">₹{motionPrice.toLocaleString('en-IN')}</div>
               </div>
             </div>
 
@@ -248,7 +248,7 @@ export default function Calculator({ onOpenContact }) {
                 </div>
                 <span className="calc-label">Custom Integrations</span>
               </div>
-              <div className="calc-price-tag">${customPrice}</div>
+              <div className="calc-price-tag">₹{customPrice.toLocaleString('en-IN')}</div>
             </div>
           </motion.div>
 
@@ -276,7 +276,7 @@ export default function Calculator({ onOpenContact }) {
                   animate={{ scale: 1, color: '#171717' }}
                   transition={{ type: 'spring', stiffness: 400, damping: 20 }}
                 >
-                  ${totalCost.toLocaleString()}
+                  ₹{totalCost.toLocaleString('en-IN')}
                 </motion.span>
               </div>
             </div>

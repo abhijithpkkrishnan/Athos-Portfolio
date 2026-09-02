@@ -1,0 +1,6 @@
+# Abhijith P K Portfolio robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://abhijithpkkrishnan.github.io/sitemap.xml
