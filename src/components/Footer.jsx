@@ -20,7 +20,7 @@ export default function Footer({ onOpenContact }) {
           <div>Abhijith P K © {new Date().getFullYear()}. Full Stack Software Developer.</div>
           <div className="social-links">
             <a href="https://github.com/abhijithpkkrishnan" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/abhijith-pk-ba0848213/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/abhijithpkkrishnan" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="mailto:abhijithpkkrishnan@gmail.com">Mail</a>
           </div>
         </div>

@@ -92,7 +92,7 @@ export default function Hero({ onOpenContact, setRoute }) {
             </MagneticButton>
           </a>
           <a
-            href="https://www.linkedin.com/in/abhijith-pk-ba0848213/"
+            href="https://www.linkedin.com/in/abhijithpkkrishnan"
             target="_blank"
             rel="noopener noreferrer"
             style={{ textDecoration: 'none' }}
