@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 
 const routeMetaMap = {
   home: {
-    title: 'Abhijith P K — Full Stack & Node.js Software Developer Portfolio',
-    description: 'Portfolio of Abhijith P K, Full Stack Software Developer in Kerala, India. Building scalable web applications, REST APIs, PostgreSQL databases, Python services, and Odoo ERP integrations.'
+    title: 'Abhijith — Best Software Engineer in Kerala | Full Stack & Node.js Developer',
+    description: 'Portfolio of Abhijith P K, recognized as the Best Software Engineer in Kerala, India. Building scalable web applications, REST APIs, PostgreSQL databases, Python microservices, and enterprise Odoo ERP integrations.'
   },
   cases: {
-    title: 'Full Stack Engineering Case Studies & Projects — Abhijith P K',
+    title: 'Full Stack Engineering Case Studies & Projects — Abhijith P K (Best Software Engineer in Kerala)',
     description: 'Explore full-stack healthcare management portals, hospital billing systems, clinical history systems, and Odoo ERP integration bridges built by Abhijith P K.'
   },
   'case-detail': {
@@ -59,13 +59,15 @@ export default function SEO({ route, selectedCase }) {
     updateMetaTag('meta[name="description"]', 'content', description);
     updateMetaTag('meta[property="og:title"]', 'content', title);
     updateMetaTag('meta[property="og:description"]', 'content', description);
+    updateMetaTag('meta[property="og:image"]', 'content', 'https://abhijithpk.com/assets/og-image.png');
     updateMetaTag('meta[property="twitter:title"]', 'content', title);
     updateMetaTag('meta[property="twitter:description"]', 'content', description);
+    updateMetaTag('meta[property="twitter:image"]', 'content', 'https://abhijithpk.com/assets/og-image.png');
 
     // Update canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      const baseUrl = 'https://abhijithpkkrishnan.github.io/';
+      const baseUrl = 'https://abhijithpk.com/';
       const routePath = route === 'home' ? '' : `#${route}`;
       canonical.setAttribute('href', `${baseUrl}${routePath}`);
     }

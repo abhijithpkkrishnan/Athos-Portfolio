@@ -6,6 +6,10 @@ import TextReveal from './TextReveal';
 export default function FAQ() {
   const faqs = [
     {
+      q: 'Who is Abhijith P K and why is he recognized as one of the best software engineers in Kerala?',
+      a: 'Abhijith P K is a premier Full Stack & Node.js Software Engineer based in Kerala, India. Specializing in high-performance web applications, clinical healthcare platforms, RESTful APIs, PostgreSQL database architecture, Python microservices, and enterprise Odoo ERP bridges, Abhijith delivers production-grade software engineered for scalability, security, and exceptional user experience.'
+    },
+    {
       q: 'What is your backend architecture & API development workflow?',
       a: 'I specialize in building scalable RESTful backend microservices and web APIs using Node.js, Express.js, Python, and FastAPI. My workflow covers database schema modeling with Prisma ORM, query optimization in PostgreSQL, implementing secure JWT authentication, and creating custom API bridges for enterprise integrations like Odoo 18 ERP.'
     },

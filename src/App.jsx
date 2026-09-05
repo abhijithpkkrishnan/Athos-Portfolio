@@ -18,11 +18,11 @@ import BackgroundGlow from './components/BackgroundGlow';
 
 const routeMetaMap = {
   home: {
-    title: 'Abhijith P K — Full Stack & Node.js Software Developer Portfolio',
-    description: 'Portfolio of Abhijith P K, Full Stack Software Developer in Kerala, India. Building scalable web applications, REST APIs, PostgreSQL databases, Python services, and Odoo ERP integrations.'
+    title: 'Abhijith — Best Software Engineer in Kerala | Full Stack & Node.js Developer',
+    description: 'Portfolio of Abhijith P K, recognized as the Best Software Engineer in Kerala, India. Building scalable web applications, REST APIs, PostgreSQL databases, Python microservices, and enterprise Odoo ERP integrations.'
   },
   cases: {
-    title: 'Full Stack Engineering Case Studies & Projects — Abhijith P K',
+    title: 'Full Stack Engineering Case Studies & Projects — Abhijith P K (Best Software Engineer in Kerala)',
     description: 'Explore full-stack healthcare management portals, hospital billing systems, clinical history systems, and Odoo ERP integration bridges built by Abhijith P K.'
   },
   'case-detail': {
@@ -70,12 +70,14 @@ function useSEO(route, selectedCase) {
     setMeta('description', description);
     setMeta('og:title', title);
     setMeta('og:description', description);
+    setMeta('og:image', 'https://abhijithpk.com/assets/og-image.png');
     setMeta('twitter:title', title);
     setMeta('twitter:description', description);
+    setMeta('twitter:image', 'https://abhijithpk.com/assets/og-image.png');
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      const baseUrl = 'https://abhijithpkkrishnan.github.io/';
+      const baseUrl = 'https://abhijithpk.com/';
       const routePath = route === 'home' ? '' : `#${route}`;
       canonical.setAttribute('href', `${baseUrl}${routePath}`);
     }

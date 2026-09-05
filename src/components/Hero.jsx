@@ -44,7 +44,7 @@ export default function Hero({ onOpenContact, setRoute }) {
             >
               <Sparkles size={13} fill="#000" color="#000" />
             </motion.div>
-            <span>Software Engineer</span>
+            <span>Best Software Engineer in Kerala</span>
           </motion.div>
         </motion.div>
 
@@ -68,7 +68,7 @@ export default function Hero({ onOpenContact, setRoute }) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
         >
-          Building scalable web applications, REST APIs, and backend architectures
+          Abhijith P K — Building scalable web applications, REST APIs, and backend architectures in Kerala, India
         </motion.p>
 
         {/* Hero Magnetic Buttons */}

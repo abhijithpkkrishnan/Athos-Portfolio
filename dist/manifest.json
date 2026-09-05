@@ -1,22 +1,22 @@
 {
-  "short_name": "Abhijith PK",
-  "name": "Abhijith P K — Full Stack & Node.js Software Developer",
-  "description": "Portfolio of Abhijith P K, Full Stack Software Developer specializing in Node.js, TypeScript, React.js, Python, PostgreSQL, and REST APIs.",
+  "short_name": "Abhijith",
+  "name": "Abhijith — Best Software Engineer in Kerala | Portfolio",
+  "description": "Portfolio of Abhijith P K, recognized as the Best Software Engineer in Kerala, India. Full Stack & Node.js Developer.",
   "icons": [
     {
-      "src": "/assets/favicon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "/assets/logo.png",
+      "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/assets/abhi_photo.jpeg",
-      "sizes": "512x512",
-      "type": "image/jpeg"
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ],
   "start_url": "/",
-  "background_color": "#ffffff",
-  "theme_color": "#1d4ed8",
+  "background_color": "#0B0F17",
+  "theme_color": "#7117ea",
   "display": "standalone",
   "orientation": "portrait"
 }

@@ -17,7 +17,7 @@ export default function Footer({ onOpenContact }) {
         </div>
 
         <div className="footer-bottom">
-          <div>Abhijith P K © {new Date().getFullYear()}. Full Stack Software Developer.</div>
+          <div>Abhijith P K © {new Date().getFullYear()}. Best Software Engineer in Kerala • Full Stack & Node.js Developer.</div>
           <div className="social-links">
             <a href="https://github.com/abhijithpkkrishnan" target="_blank" rel="noreferrer">GitHub</a>
             <a href="https://www.linkedin.com/in/abhijithpkkrishnan" target="_blank" rel="noreferrer">LinkedIn</a>
