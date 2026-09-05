@@ -59,15 +59,15 @@ export default function SEO({ route, selectedCase }) {
     updateMetaTag('meta[name="description"]', 'content', description);
     updateMetaTag('meta[property="og:title"]', 'content', title);
     updateMetaTag('meta[property="og:description"]', 'content', description);
-    updateMetaTag('meta[property="og:image"]', 'content', 'https://abhijithpk.com/assets/og-image.png');
+    updateMetaTag('meta[property="og:image"]', 'content', 'https://www.abhijithpk.com/assets/og-image.png');
     updateMetaTag('meta[property="twitter:title"]', 'content', title);
     updateMetaTag('meta[property="twitter:description"]', 'content', description);
-    updateMetaTag('meta[property="twitter:image"]', 'content', 'https://abhijithpk.com/assets/og-image.png');
+    updateMetaTag('meta[property="twitter:image"]', 'content', 'https://www.abhijithpk.com/assets/og-image.png');
 
     // Update canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      const baseUrl = 'https://abhijithpk.com/';
+      const baseUrl = 'https://www.abhijithpk.com/';
       const routePath = route === 'home' ? '' : `#${route}`;
       canonical.setAttribute('href', `${baseUrl}${routePath}`);
     }

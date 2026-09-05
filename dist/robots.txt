@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://abhijithpk.com/sitemap.xml
+Sitemap: https://www.abhijithpk.com/sitemap.xml

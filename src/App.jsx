@@ -70,14 +70,14 @@ function useSEO(route, selectedCase) {
     setMeta('description', description);
     setMeta('og:title', title);
     setMeta('og:description', description);
-    setMeta('og:image', 'https://abhijithpk.com/assets/og-image.png');
+    setMeta('og:image', 'https://www.abhijithpk.com/assets/og-image.png');
     setMeta('twitter:title', title);
     setMeta('twitter:description', description);
-    setMeta('twitter:image', 'https://abhijithpk.com/assets/og-image.png');
+    setMeta('twitter:image', 'https://www.abhijithpk.com/assets/og-image.png');
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      const baseUrl = 'https://abhijithpk.com/';
+      const baseUrl = 'https://www.abhijithpk.com/';
       const routePath = route === 'home' ? '' : `#${route}`;
       canonical.setAttribute('href', `${baseUrl}${routePath}`);
     }
