@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const routeMetaMap = {
   home: {
-    title: 'Abhijith — Best Software Engineer in Kerala | Full Stack & Node.js Developer',
+    title: 'Abhijith P K — Best Software Engineer in Kerala | Full Stack & Node.js Developer',
     description: 'Portfolio of Abhijith P K, recognized as the Best Software Engineer in Kerala, India. Building scalable web applications, REST APIs, PostgreSQL databases, Python microservices, and enterprise Odoo ERP integrations.'
   },
   cases: {

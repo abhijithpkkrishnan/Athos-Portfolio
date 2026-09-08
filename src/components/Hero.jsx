@@ -57,7 +57,7 @@ export default function Hero({ onOpenContact, setRoute }) {
             delay={0.12}
             stagger={0.06}
           >
-            Full-Stack & Node.js Engineer
+            Abhijith P K — Full-Stack & Node.js Engineer
           </TextReveal>
         </div>
 
