@@ -44,7 +44,7 @@ export default function Hero({ onOpenContact, setRoute }) {
             >
               <Sparkles size={13} fill="#000" color="#000" />
             </motion.div>
-            <span>Best Software Engineer in Kerala</span>
+            <span>Software Engineer</span>
           </motion.div>
         </motion.div>
 
